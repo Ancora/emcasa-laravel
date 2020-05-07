@@ -36,4 +36,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /* Relacionamento 1:1 -> user possui UMA store => hasOne */
+    public function store()
+    {
+        return $this->hasOne(Store::class);
+    }
 }

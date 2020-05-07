@@ -18,7 +18,7 @@ class CreateStoresTable extends Migration
             $table->unsignedBigInteger('user_id');
 
             $table->string('name');                     // razão social ou nome
-            $table->string('register')->unique();       // cnpj ou cpf
+            $table->string('register');                 // cnpj ou cpf
             $table->string('company_name')->unique();   // nome fantasia
             $table->string('description');              // descrição das atividades
             $table->string('prefix')->unique();         // prefixo dos códigos dos produtos

@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('store_id');
 
             $table->string('code')->unique();               // código do produto
+            //$table->string('code');                         // código do produto
             $table->string('name');                         // nome do produto
             $table->string('description');                  // descrição
             $table->text('body');                           // informações
