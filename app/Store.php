@@ -8,7 +8,7 @@ class Store extends Model
 {
     protected $fillable = [
         'name', 'register', 'company_name', 'description', 'prefix', 'slug', 'address', 'number',
-        'complment', 'district', 'state', 'contact', 'phone', 'mobile_phone', 'email', 'delivery_fee'
+        'complement', 'district', 'state', 'contact', 'phone', 'mobile_phone', 'email', 'delivery_fee'
     ];
 
     /* Relacionamento 1:1 -> store pertence a UM user => belongsTo */

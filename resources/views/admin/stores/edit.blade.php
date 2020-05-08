@@ -1,0 +1,93 @@
+@extends('layouts.app')
+
+@section('content')
+    <h1>Atualizar Loja</h1>
+    <form action="/admin/stores/update/{{$store->id}}" method="POST">
+        <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label for="name">Nome</label>
+                <input type="text" name="name" class="form-control" value="{{$store->name}}">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="register">CNPJ/CPF</label>
+                <input type="text" name="register" class="form-control" value="{{$store->register}}">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="company_name">Nome Fantasia</label>
+                <input type="text" name="company_name" class="form-control" value="{{$store->company_name}}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label for="description">Descrição</label>
+                <input type="text" name="description" class="form-control" value="{{$store->description}}">
+            </div>
+            <div class="form-group col-md-1">
+                <label for="prefix">Prefixo</label>
+                <input type="text" name="prefix" class="form-control" value="{{$store->prefix}}">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="slug">Slug</label>
+                <input type="text" name="slug" class="form-control" value="{{$store->slug}}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label for="address">Logradouro</label>
+                <input type="text" name="address" class="form-control" value="{{$store->address}}">
+            </div>
+            <div class="form-group col-md-1">
+                <label for="number">Número</label>
+                <input type="text" name="number" class="form-control" value="{{$store->number}}">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="complement">Complemento</label>
+                <input type="text" name="complement" class="form-control" value="{{$store->complement}}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="district">Bairro</label>
+                <input type="text" name="district" class="form-control" value="{{$store->district}}">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="state">UF</label>
+                <input type="text" name="state" class="form-control" value="{{$store->state}}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="contact">Contato</label>
+                <input type="text" name="contact" class="form-control" value="{{$store->contact}}">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="phone">Telefone</label>
+                <input type="text" name="phone" class="form-control" value="{{$store->phone}}">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="mobile_phone">Celular</label>
+                <input type="text" name="mobile_phone" class="form-control" value="{{$store->mobile_phone}}">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="email">E-mail</label>
+                <input type="text" name="email" class="form-control" value="{{$store->email}}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-2">
+                <label for="delivery_fee">Taxa de Entrega Padrão</label>
+                <input type="text" name="delivery_fee" class="form-control" value="{{$store->delivery_fee}}">
+            </div>
+        </div>
+
+        <div class="row col-md-12">
+            <button type="submit" class="btn btn-lg btn-info">Atualizar</button>
+        </div>
+    </form>
+@endsection
