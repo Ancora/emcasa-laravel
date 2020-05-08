@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Atualizar Loja</h1>
-    <form action="/admin/stores/update/{{$store->id}}" method="POST">
+    <form action="{{route('admin.stores.update', ['store' => $store->id])}}" method="POST">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
         <div class="row">
             <div class="form-group col-md-4">
@@ -86,8 +86,14 @@
             </div>
         </div>
 
-        <div class="row col-md-12">
-            <button type="submit" class="btn btn-lg btn-info">Atualizar</button>
+        <div class="row">
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-md btn-success">Atualizar</button>
+            </div>
+
+            <div class="col-md-2">
+                <a href="{{route('admin.stores.index')}}" class="btn btn-md btn-info">Voltar</a>
+            </div>
         </div>
     </form>
 @endsection

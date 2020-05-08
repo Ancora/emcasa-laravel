@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+<a href="{{route('admin.stores.create')}}" class="btn btn-md btn-success">Cadastrar Loja</a>
 <table class="table table-striped">
     <thead>
         <tr>
             <th>#</th>
             <th>Loja</th>
+            <th>CPF/CNPJ</th>
             <th>Ações</th>
         </tr>
     </thead>
@@ -14,7 +16,11 @@
             <tr>
                 <td>{{$store->id}}</td>
                 <td>{{$store->name}}</td>
-                <td></td>
+                <td>{{$store->register}}</td>
+                <td>
+                    <a href="{{route('admin.stores.edit', ['store' => $store->id])}}" class="btn btn-sm btn-primary">Editar</a>
+                    <a href="{{route('admin.stores.destroy', ['store' => $store->id])}}" class="btn btn-sm btn-danger">Excluir</a>
+                </td>
             </tr>
         @endforeach
     </tbody>

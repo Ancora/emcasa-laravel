@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Cadastrar Loja</h1>
-    <form action="/admin/stores/store" method="POST">
+    <form action="{{route('admin.stores.store')}}" method="POST">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
         <div class="row">
             <div class="form-group col-md-4">
@@ -94,8 +94,14 @@
             </div>
         </div>
 
-        <div class="row col-md-12">
-            <button type="submit" class="btn btn-lg btn-success">Cadastrar</button>
+        <div class="row">
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-md btn-success">Cadastrar</button>
+            </div>
+
+            <div class="col-md-2">
+                <a href="{{route('admin.stores.index')}}" class="btn btn-md btn-info">Voltar</a>
+            </div>
         </div>
     </form>
 @endsection
